@@ -1,0 +1,77 @@
+Base 16: -
+-------
+0	-> 1
+1	-> 16
+2	-> 256
+3	-> 
+4	-> 
+5	-> 
+6	-> 
+7	-> 
+8	-> 
+9	-> 
+10	-> 
+
+Basic Architecture: -
+------------------
+	1. System consist of a processor, memory and I/O (Input and Output) devices.
+	2. I/O used for communicating from threal world. Processor used for performing operations and memory is internal space for processor.
+	3. Address bus: It is a unidirectional bus that is used to carry address of processor to memory or I/O about which element to read or write.
+	   Data bus: It is a 8-bit bidirectional bus that is used to move data from the memory or I/O to processor in read operation & move data from processor to memory or I/O in write operation.
+	   Control bus: It is a bidirectional bus that is used to carry control signals between the processor and memory and I/O devices.
+
+Registers: -
+---------
+	64 bits		32 bits		16 bits		8 bits		8 bits - 15 bits
+	=======		=======		=======		======		================
+	 rax		  eax		  ax		  al			  ah
+	 rbx		  ebx		  bx		  bl			  bh
+	 rcx		  ecx		  cx		  cl			  ch
+	 rdx		  edx		  dx		  dl			  dh
+	 rsi		  esi		  si		  sil
+	 rdi		  edi		  di		  dil
+	 rbp		  ebp		  bp		  bpl
+	 rsp		  esp		  sp		  spl
+	 r8			  r8d		  r8w		  r8b
+	 r9			  r9d		  r9w		  r9b
+	 r10		  r10d		  r10w		  r10b
+	 r11		  r11d		  r11w		  r11b
+	 r12		  r12d		  r12w		  r12b
+	 r13		  r13d		  r13w		  r13b
+	 r14		  r14d		  r14w		  r14b
+	 r15		  r15d		  r15w		  r15b
+
+Instruction: -
+-----------
+	Data Movement Instructions: -
+	--------------------------
+		mov   -->  transfer data from one to another register
+		push  -->  add 4 byte to stack memory
+		pop   -->  remove 4 byte from stack memory and transfer data to another register
+		lea   -->  
+	
+	Arithematic and Logic Instructions: -
+	----------------------------------
+		add   --> adding
+		sub   --> subtracting
+		inc   --> increment a number
+		dec   --> decremen a number
+		imul  --> integer multiplication
+		idiv  --> integer division
+
+
+File Operation: -
+--------------
+	0 -> read (standard input)
+	1 -> write (standard output)
+	2 -> exit status (standard error)
+
+GDB commands: -
+------------
+layout asm                     -> To set debug layout for asm
+break _start                   -> To jump to _start address
+run                            -> To start asm program
+quit                           -> To stop asm program
+stepi                          -> To follow next step of asm program
+info registers [register name] -> To get info about registers
+x/x $[register name]           -> To get address and value of registers
