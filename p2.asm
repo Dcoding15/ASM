@@ -8,22 +8,22 @@ section .data
 	num1 db 1
 	num2 db 2
 	num3 db 0
+	num5 db 3 dup(2)
 section .bss
-; resb ==> reserve byte
+; resb ==> reserve no. of bytes
+; Can't put any value directly to variable. First assign value to register then assign to variable
+	num4 resb 1
 section .text
 global _start
 _start:
-	mov al, [num1]
-	mov bl, [num2]
-	add al, bl
-	mov [num3], al
-
-;	mov rax, 1
-;	mov rdi, 1
-;	mov rsi, [num3]
-;	mov rdx, 50
-;	syscall
+;	mov al, [num1]
+;	mov bl, [num2]
+;	mov cl, 5
+	mov dl, [num5]
+;	mov [num4], cl
+;	add al, bl
+;	mov [num3], al
 
 	mov rax, 60
-	mov rdi, [num3]
+	mov rdi, 0
 	syscall
